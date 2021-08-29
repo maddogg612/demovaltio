@@ -16,6 +16,7 @@ const TodosList = () => {
 
 function TodoRow({ todo }) {
   function handleCheckBoxChange(event) {
+    console.log('filtering', event.target.checked);
     actions.toggleTodo(todo.id, event.target.checked);
   }
 
@@ -36,6 +37,8 @@ function TodoRow({ todo }) {
         border: '1px solid #ffffffa6',
         cursor: 'pointer',
         color: 'black',
+        textDecoration: todo.completed ? 'line-through' : 'initial',
+        fontSize: '25px',
       }}
     >
       <input
