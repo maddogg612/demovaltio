@@ -1,6 +1,6 @@
 import { proxy, useSnapshot } from 'valtio';
 
-export const filters = ['all', 'completed'];
+export const filters = ['all', 'completed', 'incomplete'];
 
 export const store = proxy({ todos: [], filter: 'all' });
 
@@ -35,12 +35,13 @@ export const actions = {
 export function useTodos() {
   const snapShot = useSnapshot(store);
   //return snapShot.todos;
-
   switch (snapShot.filter) {
     case 'all':
       return snapShot.todos;
     case 'completed':
       return snapShot.todos.filter((todo) => todo.completed);
+    case 'incomplete':
+      return snapShot.todos.filter((todo) => !todo.completed);
     default:
       throw Error('Error: unsupported filter');
   }

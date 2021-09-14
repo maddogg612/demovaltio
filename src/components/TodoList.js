@@ -30,39 +30,45 @@ function TodoRow({ todo }) {
       style={{
         display: 'flex',
         alignItems: 'center',
-        margin: '0',
-        padding: '0',
+        margin: 0,
+        padding: 0,
         flexDirection: 'row',
         justifyContent: 'center',
         border: '1px solid #ffffffa6',
         cursor: 'pointer',
         color: 'black',
-        textDecoration: todo.completed ? 'line-through' : 'initial',
-        fontSize: '25px',
+        fontSize: 25,
       }}
     >
       <input
         type="checkbox"
+        checked={todo.completed ? 'checked' : ''}
         style={{
           border: 'solid',
-          padding: '0',
-          margin: '0',
-          alignItems: 'center',
+          padding: 0,
+          margin: 0,
         }}
         onChange={handleCheckBoxChange}
       />
-      <h5>{todo.name}</h5>
       <h5
         style={{
+          textDecoration: todo.completed ? 'line-through' : 'initial',
+          marginRight: 100,
+        }}
+      >
+        {todo.name}
+      </h5>
+
+      <button
+        style={{
           color: 'red',
-          paddingLeft: 10,
           cursor: 'pointer',
           alignItems: 'center',
         }}
         onClick={handleDeleteClick}
       >
-        X
-      </h5>
+        Delete
+      </button>
     </div>
   );
 }

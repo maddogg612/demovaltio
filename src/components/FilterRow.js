@@ -5,10 +5,10 @@ function FilterRow() {
   const activeFilter = useFilter();
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: 0, marginTop: 10 }}>
       {filters.map((filter) => (
         <button
-          style={{ fontWeight: activeFilter === filter ? 'bold' : 'normal' }}
+          style={{ fontWeight: activeFilter === filter ? 'bold' : 'normal', margin:  10 }}
           onClick={() => {
             actions.toggleFilter(filter);
           }}
