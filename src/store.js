@@ -8,7 +8,7 @@ let id = 0;
 export const actions = {
   addToDo(todos) {
     store.todos.push({ ...todos, id: id++ });
-    console.log(store.todos);
+    //console.log(store.todos);
   },
   toggleTodo(id, value) {
     const todo = store.todos.find((todo) => todo.id === id);
