@@ -19,7 +19,7 @@ const InputField = ({ text }) => {
         placeholder="Enter your todo..."
         onChange={({ target }) => {
           setValue(target.value);
-          console.log(value);
+          //console.log(value);
         }}
       />
     </form>
